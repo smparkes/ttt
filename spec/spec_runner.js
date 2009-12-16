@@ -28,7 +28,6 @@
     var q = path.lastIndexOf("?");
     if ( q >= 0 ) {
       path = path.slice(0,q);
-      // print(path);
     }
     var slash = path.lastIndexOf("/");
     if ( slash < 0 ) {
@@ -123,7 +122,6 @@
     if ( !run ) {
       var match = /\?([^?]+)$/.exec(window.location.href);
       if(match){
-        print(match[1]);
         var pairs = match[1].split("&");
         $.each(pairs,function(){
           var kv = this.split("=");
@@ -131,7 +129,6 @@
           var v = kv[1];
           if(k == "specs"){
             run = ( v == "true" );
-            print("r",run);
           }
         });
       }
