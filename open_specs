@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'json'
+require 'uri'
+require 'pathname'
+
+prefix = ARGV[0] || "file://"+Pathname(".").realpath.to_s
+prefix[-1] == "/" or prefix += "/"
+
+runner = prefix + "spec/spec_runner.html"
+files = []
+specs = Dir["spec/**/*_spec.js"]
+specs = specs.select do |spec|
+  html = spec.dup
+  puts html
+  html.sub! %r(^spec/), ""
+  html.sub! %r(_?[Ss]pec\.js$), ".html"
+  if File.exist? html
+    files << html
+  end
+  !File.exist?(html)
+end
+files = files.join("?specs=true' '#{prefix}")
+files = "'#{prefix}#{files}?specs=true'" if files
+app = "firefox"
+cmd = "#{app} #{files} '#{runner}?specs=#{URI.escape(specs.to_json)}'"
+
+puts cmd
+system cmd

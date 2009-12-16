@@ -1,6 +1,17 @@
 (function($){
 
-  include = this.include || jasmine.include;
+  var real_include = this.include || jasmine.include;
+  var included = {};
+  
+  include = function include(){
+    for(var i=0; i < arguments.length; i++){
+      if(!included[arguments[i]]){
+        real_include(arguments[i]);
+        included[arguments[i]] = true;
+      }
+    }
+    
+  };
 
   var print = ( this.Envjs && this.print ) || ( this.console && this.console.debug ) || function(){};
 
@@ -70,7 +81,7 @@
              dataType: "text/javascript",
              async: false,
              error: function( xhr ) {
-               if(xhr.status != 404) {
+               if(xhr.status != 404 && xhr.status != 0) {
                  throw "error on load_file xhr for " + filename + ": " + xhr.status;
                }
              },
@@ -128,7 +139,7 @@
           var k = kv[0];
           var v = kv[1];
           if(k == "specs"){
-            run = ( v == "true" );
+            run = true;
           }
         });
       }
@@ -137,8 +148,6 @@
       var specs = find_specs();
       if (specs) {
         load_specs(specs);
-      } else {
-        run= false;
       }
     }
     return run;

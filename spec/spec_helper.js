@@ -9,7 +9,7 @@ jazrb_root = this.jazrb_root || "..";
       var k = kv[0];
       var v = kv[1];
       if(k == "specs"){
-        run = ( v == "true" );
+        run = true;
       }
     });
   }

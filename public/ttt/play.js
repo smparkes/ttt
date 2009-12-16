@@ -1,6 +1,6 @@
 (function($){
  
- var debug = this.debug || ( console && console.debug );
+ var debug = this.debug || ( this.console && this.console.debug );
 
   $(function(){
 
