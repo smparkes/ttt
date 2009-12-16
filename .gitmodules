@@ -1,3 +1,6 @@
 [submodule "vendor/jquery"]
 	path = vendor/jquery
 	url = git://github.com/jquery/jquery.git
+[submodule "vendor/dramatis"]
+	path = vendor/dramatis
+	url = git://github.com/dramatis/dramatis.git
