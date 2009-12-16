@@ -8,6 +8,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
       describe("view",function(){
 
         it("should be creatable from a server",function(){
+          pending();
           expect(new TTT.Server.View(new TTT.Server)).toBeUndefined(); // toBeDefined();
         });
 

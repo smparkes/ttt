@@ -25,6 +25,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
         });
 
         it("should join a game on a server",function(){
+          pending();
           this.tom.join(this.server);
           this.tom.game(function(game){
             expect(game).toBeDefined();
