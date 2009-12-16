@@ -3,7 +3,7 @@
   describe("ttt",function(){
     describe("both",function(){
 
-      describe("starting a server",function(){
+      it("should play a server",function(){
         $.click_link("Start server");
         $.click_link("Join a game");
         $.click_link("Join a game");

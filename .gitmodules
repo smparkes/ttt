@@ -4,3 +4,6 @@
 [submodule "vendor/dramatis"]
 	path = vendor/dramatis
 	url = git://github.com/dramatis/dramatis.git
+[submodule "vendor/jazrb"]
+	path = vendor/jazrb
+	url = git@github.com:smparkes/jazrb.git

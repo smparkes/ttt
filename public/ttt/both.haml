@@ -2,8 +2,15 @@
 %html{html_attrs}
   %head
     %title Play TTT!
-    %link{:href=>"ttt.css",:rel=>"stylesheet",:type=>"text/css"}
-    %script{:type => "text/javascript", :src=>"ttt.js"}
+    %link{:href=>"../ttt.css",:rel=>"stylesheet",:type=>"text/css"}
+    %script{:type => "text/javascript", :src=>"../ttt.js"}
     %script{:type => "text/javascript", :src=>"both.js"}
   %body
+
+    #server
+      %a{:href=>"#"} Start server
+
+    #games
+      %a{:href=>"#"} Join a game
+
     %script{:type => "text/javascript", :src=>"spec_helper.js"}

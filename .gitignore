@@ -1,2 +1,4 @@
-.sass-cache
+/.sass-cache
+/public/*.html
 /public/*/*.html
+/spec/*.html
