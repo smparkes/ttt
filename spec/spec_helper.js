@@ -48,6 +48,7 @@ jazrb_root = this.jazrb_root || "..";
       })();
     };
     !this.jQuery && document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jquery/dist/jquery.js'></script>");
+    document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/underscore/underscore.js'></script>");
     document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jsrat/src/jsrat.js'></script>");
     document.write("<script type='text/javascript' src='" + jazrb_root + "/spec/spec_runner.js'></script>");
   }

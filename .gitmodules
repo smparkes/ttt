@@ -7,3 +7,6 @@
 [submodule "vendor/jazrb"]
 	path = vendor/jazrb
 	url = git@github.com:smparkes/jazrb.git
+[submodule "vendor/underscore"]
+	path = vendor/underscore
+	url = git://github.com/documentcloud/underscore.git
