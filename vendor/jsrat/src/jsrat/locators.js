@@ -1,0 +1,5 @@
+(function($){
+
+  jsrat.Locators = {};
+
+})(jQuery);
