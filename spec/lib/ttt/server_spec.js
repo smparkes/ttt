@@ -10,8 +10,32 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
         expect(new TTT.Server).toBeDefined();
       });
 
+      it("should be stoppable",function(){
+        expect((new TTT.Server).stop()).toBeUndefined();
+      });
+
       it("should provide a scope",function(){
         expect(new TTT.Server.Class).toBeDefined();
+      });
+
+      it("should create a default view if given constructor argument",function(){
+        var div = $("<div></div>");
+        var server = new TTT.Server(div);
+        expect(div.find(".ttt.server.view").length).toBe(1);
+      });
+
+      it("should delete the view on stop if given constructor argument",function(){
+        var div = $("<div></div>");
+        var server = new TTT.Server(div);
+        expect(div.find(".ttt.server.view").length).toBe(1);
+        server.stop();
+        expect(div.find(".ttt.server.view").length).toBe(0);
+      });
+
+      it("should support pub/sub",function(){
+        var server =  new TTT.Server;
+        server.subscribe("players");
+        server.stop();
       });
 
       describe("running games",function(){

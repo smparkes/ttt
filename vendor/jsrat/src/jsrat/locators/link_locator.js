@@ -34,7 +34,7 @@
       if(this._value instanceof RegExp) {
         matcher = function(t) { return self._value.exec(t); };
       } else {
-        matcher = function(t) { return t.indexOf( self._value ) != -1; };
+        matcher = function(t) { return t && (t.indexOf( self._value ) != -1); };
       }
       return matcher( this.replace_nbsp(link.text()) ) ||
               matcher( this.replace_nbsp_ref(link.text()) ) ||
@@ -56,6 +56,10 @@
         matcher = function(t) { return ( t === self._value ); };
       }
       return matcher( id );
+    },
+    error_message: function error_message() {
+      return "Could not find link with text or title or id '" +
+              this._value + "'";
     }
   });
 

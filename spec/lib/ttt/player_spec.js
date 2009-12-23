@@ -25,17 +25,24 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
         });
 
         it("should join a game on a server",function(){
-          pending();
+          var self = this;
           this.tom.join(this.server);
-          this.tom.game(function(game){
-            expect(game).toBeDefined();
-            complete();
-          });
+          this.jerry.join(this.server);
+          setTimeout(function(){
+            self.tom.game(function(game){
+              expect(game).toBeDefined();
+              complete();
+            });
+            self.jerry.game(function(game){
+              expect(game).toBeDefined();
+              complete();
+            });
+          },0);
+          incomplete();
           incomplete();
         });
 
       });
-
 
     });
   });

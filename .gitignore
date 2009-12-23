@@ -1,4 +1,5 @@
 /.sass-cache
+/.ttt.watchr.deps
 /public/*.html
 /public/*/*.html
 /public/*/*.css

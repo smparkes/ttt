@@ -1,4 +1,7 @@
 include(jazrb_root + '/spec/lib/spec_helper.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/class.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/subscriber.js');
 include(jazrb_root + '/lib/ttt.js');
 include(jazrb_root + '/lib/ttt/class.js');
 include(jazrb_root + '/lib/ttt/server.js');

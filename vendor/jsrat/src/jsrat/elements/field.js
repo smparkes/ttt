@@ -67,6 +67,7 @@
     },
     set: function set(value) {
       $(this._element).val(value);
+      $(this._element).change();
     }
   });
 

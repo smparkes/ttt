@@ -2,21 +2,45 @@
   $(function(){
 
     var start_server = "a:contains('Start server')";
+    var stop_server = "a:contains('Stop server')";
     var join_game = "a:contains('Join a game')";
+    var player_name = "label:contains('Player name') input";
 
     $(join_game).hide();
 
-    $(start_server).click(function start_server(){
-      $("#server").data("server",new TTT.Server);
+    $(start_server).live("click",function start_server(){
+      $(this).text("Stop server");
+      $("#server").data("server",new TTT.Server($("#server .view")));
       $(join_game).show();
       return false;
     });
 
+    $(stop_server).live("click",function stop_server(){
+      var undefined;
+      var server = $("#server").data("server");
+      server.stop();
+       $("#server").data("server",undefined);
+      $(join_game).hide();
+      $(this).text("Start server");
+      return false;
+    });
+
+    var on_player_name_change = function on_player_name_change(){
+      var val = $(this).val();
+      if(val && !val.match(/^\s*$/)){
+        $(join_game).attr("href","#");
+      } else {
+        $(join_game).removeAttr("href");
+      }
+    };
+
+    $(player_name).change(on_player_name_change).keyup(on_player_name_change);
+
     $(join_game).click(function join_game(){
       var div = $("<div class='game'></div>").appendTo($("#games"));
-      $("#server").data("server").join(function(seat){
+      $("#server").data("server").join( function(seat){
         throw new Error("Implement join game");
-      });
+      } );
       return false;
     });
 
