@@ -38,7 +38,6 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
           beforeEach(function(){
             this.div = $("<div></div>");
             this.view = new TTT.Server.View(this.server = new TTT.Server,this.div);
-
           });
 
           afterEach(function(){

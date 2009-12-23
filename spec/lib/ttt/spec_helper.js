@@ -1,7 +1,12 @@
 include(jazrb_root + '/spec/lib/spec_helper.js');
 include(jazrb_root + '/vendor/dramatis/lib/dramatis.js');
 include(jazrb_root + '/vendor/dramatis/lib/dramatis/class.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/runtime.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/runtime/callable.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/runtime/callable/method.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/continuation.js');
 include(jazrb_root + '/vendor/dramatis/lib/dramatis/subscriber.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/publisher.js');
 include(jazrb_root + '/lib/ttt.js');
 include(jazrb_root + '/lib/ttt/class.js');
 include(jazrb_root + '/lib/ttt/server.js');

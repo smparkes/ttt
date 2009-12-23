@@ -34,7 +34,6 @@
 
       it("should have a server view",function(){
         $.jsrat.click_link("Start server");
-        debug("C",$("#server").html());
         expect($("#server .ttt.server.view").length).toBe(1);
       });
 
@@ -48,7 +47,6 @@
       describe("two player senario", function(){
 
         beforeEach(function(){
-          return;
           $("#games .game").remove();
           with($.jsrat){
             click_link("Start server");

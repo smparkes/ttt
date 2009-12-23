@@ -34,7 +34,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
 
       it("should support pub/sub",function(){
         var server =  new TTT.Server;
-        server.subscribe("players");
+        server.add_subscription(new Dramatis.Continuation({},"method"));
         server.stop();
       });
 
