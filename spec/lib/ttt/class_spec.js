@@ -7,7 +7,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
     describe("class",function(){
 
       it("should be default creatable",function(){
-        expect(new TTT.Class).toBeDefined();
+        expect(TTT.Class(function T(){})).toBeDefined();
       });
 
       it("should default to the name of the constructor",function(){
@@ -24,7 +24,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
 
       it("should provide a Subscope method",function(){
         var Player = new TTT.Class(function Player(){});
-        new TTT.Class.Subscope(Player);
+        TTT.Class.Subscope(Player);
         var View = new Player.Class(function View(){});
         expect(View+"").toBe("TTT.Player.View");
       });

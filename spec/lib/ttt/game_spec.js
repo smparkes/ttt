@@ -18,15 +18,6 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
           this.game = new TTT.Game(this.tom,this.jerry);
         });
 
-        it("should ask the first player to move",function(){
-          this.tom.move = function move() {
-            expect(true).toBe(true);
-            complete();
-          };
-          this.game.start();
-          incomplete();
-        });
-
       });
     });
   });

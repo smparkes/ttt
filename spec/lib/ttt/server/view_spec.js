@@ -45,7 +45,16 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
           });
 
           it("should show no players before anyone joins",function(){
-            expect(this.div.find(".players").text()).toBe("0");
+            expect(this.div.find(".players .count").text()).toBe("0");
+          });
+
+          it("should increment players and show board when game started",function(){
+            expect(this.div.find(".game").length).toBe(0);
+            this.server.join({});
+            expect(this.div.find(".players .count").text()).toBe("1");
+            this.server.join({});
+            expect(this.div.find(".players .count").text()).toBe("2");
+            expect(this.div.find(".game").length).toBe(1);
           });
 
         });

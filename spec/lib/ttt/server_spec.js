@@ -15,7 +15,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
       });
 
       it("should provide a scope",function(){
-        expect(new TTT.Server.Class).toBeDefined();
+        expect(TTT.Server.Class(function F(){})).toBeDefined();
       });
 
       it("should create a default view if given constructor argument",function(){

@@ -58,8 +58,11 @@
         });
 
         it("should create a game view for each player",function(){
-          pending();
           expect($("#games .game").length).toBe(2);
+        });
+
+        it("should create a game view for the server view",function(){
+          expect($("#server .game").length).toBe(1);
         });
 
         it("should allow the first player to make the first move",function(){

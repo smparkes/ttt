@@ -33,16 +33,21 @@
         $(join_game).removeAttr("href");
       }
     };
-
+    
     $(player_name).change(on_player_name_change).keyup(on_player_name_change);
 
     $(join_game).click(function join_game(){
       var div = $("<div class='game'></div>").appendTo($("#games"));
-      $("#server").data("server").join( function(seat){
-        throw new Error("Implement join game");
+      var player = new TTT.Player( $(player_name).val() );
+      $("#server").data("server").join( player, function(game){
+        new TTT.Game.View( game, player, div );
       } );
       return false;
     });
+
+    // set initial state, e.g., for browser-prefill
+
+    $(player_name).change();
 
   });
 })();

@@ -41,3 +41,45 @@ a.button
 #server, #client
   span.url
     :display none
+
+.games
+  :padding-top 1em
+  :padding-bottom 1em
+
+.game
+  :float left
+  :padding-right 1em
+
+  .caption
+    :margin-top 4px
+    :font-size .8em
+    :text-align center
+
+    .turn
+      :color red
+
+table.ttt
+  :border-spacing 0
+  :margin 0
+  :padding 0
+  td
+    :width 1.5em
+    :height 1.5em
+    :text-align center
+    :font-weight bold
+    :font-family sans
+  tr:first-child td
+    :border-bottom solid black 2px
+  tr:last-child td
+    :border-top solid black 2px
+  td:first-child
+    :border-right solid black 2px
+  td:last-child 
+    :border-left solid black 2px
+
+.clear:after
+  :content "XXX"
+  :display block
+  :height 0
+  :clear both
+  :visibility hidden

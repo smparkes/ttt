@@ -12,7 +12,6 @@ include(jazrb_root + "/spec/public/ttt/spec_helper.js");
 
       it("should have a server view",function(){
         expect($("#server").size()).toEqual(1);
-        pending();
         expect($("#server").html()).toNotMatch(/^\s*$/);
       });
 
