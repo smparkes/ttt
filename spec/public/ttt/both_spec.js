@@ -47,7 +47,6 @@
       describe("two player senario", function(){
 
         beforeEach(function(){
-          $("#games .game").remove();
           with($.jsrat){
             click_link("Start server");
             fill_in("Player name", {with: "Tom"});
@@ -57,12 +56,20 @@
           }
         });
 
+        afterEach(function(){
+          $("#games .game").remove();
+        });
+
         it("should create a game view for each player",function(){
           expect($("#games .game").length).toBe(2);
         });
 
         it("should create a game view for the server view",function(){
           expect($("#server .game").length).toBe(1);
+        });
+
+        it("game views for should reflect turn",function(){
+          expect($("#games .game .turn.current").length).toBe(1);
         });
 
         it("should allow the first player to make the first move",function(){

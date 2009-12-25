@@ -1,4 +1,4 @@
-(function(){
+(function($){
   $(function(){
 
     var start_server = "a:contains('Start server')";
@@ -19,7 +19,7 @@
       var undefined;
       var server = $("#server").data("server");
       server.stop();
-       $("#server").data("server",undefined);
+      $("#server").data("server",undefined);
       $(join_game).hide();
       $(this).text("Start server");
       return false;
@@ -37,10 +37,10 @@
     $(player_name).change(on_player_name_change).keyup(on_player_name_change);
 
     $(join_game).click(function join_game(){
-      var div = $("<div class='game'></div>").appendTo($("#games"));
+      var div = $("#games");
       var player = new TTT.Player( $(player_name).val() );
-      $("#server").data("server").join( player, function(game){
-        new TTT.Game.View( game, player, div );
+      $("#server").data("server").join( player, function(game, index){
+        new TTT.Game.View.SVG( game, index, div );
       } );
       return false;
     });
@@ -50,4 +50,4 @@
     $(player_name).change();
 
   });
-})();
+})(jQuery);

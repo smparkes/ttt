@@ -46,6 +46,14 @@ a.button
   :padding-top 1em
   :padding-bottom 1em
 
+#games
+  .prompt
+
+    :padding-bottom 1em
+
+    a, label
+      :display block
+
 .game
   :float left
   :padding-right 1em
@@ -55,8 +63,13 @@ a.button
     :font-size .8em
     :text-align center
 
+    .current
+      :text-decoration underline
+      &.turn
+        :color green
+
     .turn
-      :color red
+      :color blue
 
 table.ttt
   :border-spacing 0

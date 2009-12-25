@@ -1,0 +1,1 @@
+jquery.svg.package-1.4.2/jquery.svg.js

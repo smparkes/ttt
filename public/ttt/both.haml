@@ -5,17 +5,22 @@
     %link{:href=>"ttt.css",:rel=>"stylesheet",:type=>"text/css"}
     %script{:type => "text/javascript", :src=>"ttt.js"}
     %script{:type => "text/javascript", :src=>"both.js"}
+
+    / %script{:src=>"jquery.svg.js", :type => "text/javascript"}
+    / %link{:href=>"jquery.svg.css",:rel=>"stylesheet",:type=>"text/css"}
+
   %body
 
     #server
       %a{:href=>"#"} Start server
       .view
 
-    #games
-      %div
+    #games.clear
+      
+      .prompt
         %label
           Player name
           %input{:type=>"text"}
-      %a Join a game
+        %a Join a game
 
     %script{:type => "text/javascript", :src=>"spec_helper.js"}
