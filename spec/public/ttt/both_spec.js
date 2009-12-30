@@ -17,7 +17,11 @@
       });
 
       it("should start w/o a server",function(){
-        expect($("a[href]:contains('Start server')").length).toBe(1);
+        setTimeout(function(){
+          expect($("a[href]:contains('Start server')").length).toBe(1);
+          complete();
+        },100);
+        incomplete();
       });
 
       it("should create a server",function(){
@@ -61,7 +65,11 @@
         });
 
         it("should create a game view for each player",function(){
-          expect($("#games .game").length).toBe(2);
+          setTimeout(function(){
+            expect($("#games .game").length).toBe(2);
+            complete();
+          },1000);
+          incomplete();
         });
 
         it("should create a game view for the server view",function(){
