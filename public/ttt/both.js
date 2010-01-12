@@ -1,4 +1,5 @@
 (function($){
+  var debug = window.console && window.console.debug || window.debug;
   $(function(){
 
     var start_server = "a:contains('Start server')";
@@ -39,6 +40,7 @@
     $(join_game).click(function join_game(){
       var div = $("#games");
       var player = new TTT.Player( $(player_name).val() );
+      // debug("new player");
       $("#server").data("server").join( player, function(game, index){
         new TTT.Game.View.SVG( game, index, div );
       } );

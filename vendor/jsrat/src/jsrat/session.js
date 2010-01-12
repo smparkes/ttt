@@ -31,6 +31,10 @@
       this._elements = {};
       this._scopes = undefined;
       this._page_scope = undefined;
+    },
+    _wait_for: function _wait_for() {
+      return this.current_scope().
+        wait_for.apply(this.current_scope(),arguments);
     }
   };
   $.extend(jsrat,jsrat.Session.prototype);

@@ -51,6 +51,19 @@
       } else {
         return this.field.apply(this,arguments); 
       }
+    },
+    _wait_for: function _wait_for(condition, fn) {
+      if(condition()){
+        fn();
+      } else {
+        setTimeout(function timeout(){
+          if(condition()){
+            fn();
+          } else {
+            setTimeout(timeout,100);
+          }
+        },100);
+      }
     }
   };
 
