@@ -142,9 +142,7 @@
           });
 
           it("should play a game to a draw",function(){
-            var moves = [ "01", "00"
-                          , "11", "21", "20", "02", "12", "10", "22"
-                        ];
+            var moves = [ "01", "00", "11", "21", "20", "02", "12", "10", "22"];
             var games = [ $("#games .game").eq(1), $("#games .game").eq(0) ];
             var player = 0;
             for(var move in moves) {
