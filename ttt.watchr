@@ -69,7 +69,13 @@ map_to_test = lambda do |file, event|
     prefix.sub! %r(_$), ""
     files = Dir[prefix+".*htm*"]
     if html = files.detect { |f| f =~ %r(\.x?html?) }
-      event == :load ? nil : html
+      # if deps are loaded, they'll handle this case ..
+      begin
+        deps = "--deps #{db_path}";
+        nil
+      rescue;
+        event == :load ? nil : html
+      end
     else 
       file
     end
