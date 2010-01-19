@@ -7,6 +7,12 @@ include(jazrb_root + '/vendor/dramatis/lib/dramatis/runtime/callable/method.js')
 include(jazrb_root + '/vendor/dramatis/lib/dramatis/continuation.js');
 include(jazrb_root + '/vendor/dramatis/lib/dramatis/subscriber.js');
 include(jazrb_root + '/vendor/dramatis/lib/dramatis/publisher.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/actor.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/actor/behavior.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/actor/interface.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/actor/type.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/actor/name.js');
+include(jazrb_root + '/vendor/dramatis/lib/dramatis/actor/name/type.js');
 include(jazrb_root + '/lib/ttt.js');
 include(jazrb_root + '/lib/ttt/class.js');
 include(jazrb_root + '/lib/ttt/server.js');
@@ -17,3 +23,4 @@ include(jazrb_root + '/lib/ttt/game/view/table.js');
 include(jazrb_root + '/lib/ttt/game/view/svg.js');
 include(jazrb_root + '/lib/ttt/player.js');
 include(jazrb_root + '/lib/ttt/player/view.js');
+include(jazrb_root + '/lib/ttt/server/actor.js');

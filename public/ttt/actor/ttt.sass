@@ -1,0 +1,101 @@
+input
+  :width 64em
+    
+.connection
+
+  // center on page
+  :margin-right 1em
+
+  .control
+    :float right
+    :margin-bottom 1em
+    :text-align right
+
+    label
+      :margin-right .2em
+
+  .value
+    :clear right
+    :float right
+
+    .status
+      :float left
+      :font-size .7em
+      :font-style italic
+      :padding-top .2em
+      :padding-left .2em
+
+    a
+      :display block
+      :float right
+      :padding-left 1em
+
+.clear
+  :clear both
+
+a.button
+  :font-size .8em
+  :text-decoration none
+  :padding-right .2em
+
+#server, #client
+  span.url
+    :display none
+
+.games
+  :padding-top 1em
+  :padding-bottom 1em
+
+#games
+  .prompt
+
+    :padding-bottom 1em
+
+    a, label
+      :display block
+
+.game
+  :float left
+  :padding-right 1em
+
+  .caption
+    :margin-top 4px
+    :font-size .8em
+    :text-align center
+
+    .current
+      :text-decoration underline
+      &.turn
+        :color green
+
+    .turn
+      :color blue
+
+table.ttt
+  :border-spacing 0
+  :margin 0
+  :padding 0
+  td
+    :width 1.5em
+    :height 1.5em
+    :text-align center
+    :font-weight bold
+    :font-family sans
+  tr:first-child td
+    :border-bottom solid black 2px
+  tr:last-child td
+    :border-top solid black 2px
+  td:first-child
+    :border-right solid black 2px
+  td:last-child 
+    :border-left solid black 2px
+
+.clear:after
+  :content "XXX"
+  :display block
+  :height 0
+  :clear both
+  :visibility hidden
+
+.winner
+  :background yellow
