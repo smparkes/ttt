@@ -50,9 +50,9 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
 
           it("should increment players and show board when game started",function(){
             expect(this.div.find(".game").length).toBe(0);
-            this.server.join({});
+            this.server.join({player_name: function(){ return "player"; }});
             expect(this.div.find(".players .count").text()).toBe("1");
-            this.server.join({});
+            this.server.join({player_name: function(){ return "player"; }});
             expect(this.div.find(".players .count").text()).toBe("2");
             expect(this.div.find(".game").length).toBe(1);
           });

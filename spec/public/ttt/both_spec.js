@@ -8,17 +8,13 @@
       describe("both",function(){
 
         beforeEach(function(){
-          var undefined;
-          fill_in("Player name", {with: ""});
+          fill_in("Player name", {using: ""});
         });
 
         afterEach(function(){
-          // debug("stop?",$("a:contains('Stop server')").length);
           $("a:contains('Stop server')").each(function(){
-            // debug("stop");
             $(this).click();
-            wait_for(function(){ return $("#serve .game").length == 0; });
-            // debug("start AXX",$("#server .game").length);
+            wait_for(function(){ return $("#serve .game").length === 0; });
           });
         });
 
@@ -29,29 +25,24 @@
         });
 
         it("should create a server",function(){
-          // debug("start");
           click_link("Start server");
           expect($("a[href]:contains('Start server')").length).toBe(0);
           expect($("a:contains('Stop server')").length).toBe(1);
         });
 
         it("should stop a server",function(){
-          // debug("start");
           click_link("Start server");
-          // debug("stop");
           click_link("Stop server");
           expect($("a[href]:contains('Start server')").length).toBe(1);
         });
 
         it("should have a server view",function(){
           click_link("Start server");
-          // debug("start");
           expect($("#server .ttt.server.view").length).toBe(1);
         });
 
         it("should not allow joining w/o a name",function(){
           click_link("Start server");
-          // debug("start");
           expect(function(){click_link("Join a game");}).toThrow();
         });
 
@@ -60,9 +51,9 @@
           var index = 0;
           beforeEach(function(){
             click_link("Start server");
-            fill_in("Player name", {with: "Tom"+index++});
+            fill_in("Player name", {using: "Tom" + ++index});
             click_link("Join a game");
-            fill_in("Player name", {with: "Jerry"+index});
+            fill_in("Player name", {using: "Jerry"+index});
             click_link("Join a game");
             wait_for( function(){ return $("#games .game").length == 2;} );
           });

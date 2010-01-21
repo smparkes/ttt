@@ -6,6 +6,7 @@ document.write("<script src='../../../vendor/dramatis/lib/dramatis/runtime/calla
 document.write("<script src='../../../vendor/dramatis/lib/dramatis/runtime/callable/method.js' type='text/javascript'></script>");
 document.write("<script src='../../../vendor/dramatis/lib/dramatis/continuation.js' type='text/javascript'></script>");
 document.write("<script src='../../../vendor/dramatis/lib/dramatis/actor.js' type='text/javascript'></script>");
+document.write("<script src='../../../vendor/dramatis/lib/dramatis/future.js' type='text/javascript'></script>");
 document.write("<script src='../../../vendor/dramatis/lib/dramatis/actor/behavior.js' type='text/javascript'></script>");
 document.write("<script src='../../../vendor/dramatis/lib/dramatis/actor/interface.js' type='text/javascript'></script>");
 document.write("<script src='../../../vendor/dramatis/lib/dramatis/actor/name.js' type='text/javascript'></script>");
@@ -28,3 +29,5 @@ document.write("<script src='../../../lib/ttt/server.js' type='text/javascript'>
 document.write("<script src='../../../lib/ttt/server/view.js' type='text/javascript'></script>");
 document.write("<script src='../../../lib/ttt/player.js' type='text/javascript'></script>");
 document.write("<script src='../../../lib/ttt/server/actor.js' type='text/javascript'></script>");
+document.write("<script src='../../../lib/ttt/player/actor.js' type='text/javascript'></script>");
+document.write("<script src='../../../lib/ttt/game/actor.js' type='text/javascript'></script>");

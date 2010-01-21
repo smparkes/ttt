@@ -1,9 +1,11 @@
+"use strict";
+/*global Dramatis, jQuery, window, jasmine, jazrb_root*/
 (function($){
-
-  var real_include = this.include || jasmine.include;
+  var global = (function(){return this;}()); 
+  var real_include = global.include || jasmine.include;
   var included = {};
   
-  include = function include(){
+  global.include = function include(){
     for(var i=0; i < arguments.length; i++){
       if(!included[arguments[i]]){
         real_include(arguments[i]);
@@ -13,11 +15,11 @@
     
   };
 
-  var print = ( this.Envjs && this.print ) || ( this.console && this.console.debug ) || function(){};
+  var print = ( global.Envjs && global.print ) || ( global.console && global.console.debug ) || function(){};
 
   var construct_path = function( source, result ) {
     var levels = 0;
-    while( source.slice( source.length - 3 ) == "/.." ) {
+    while( source.slice( source.length - 3 ) === "/.." ) {
       levels++;
       source = source.slice( 0, source.length - 3 );
     }
@@ -34,8 +36,8 @@
   };
 
   var spec_filename = function() {
-    var window = this;
-    path = window.location.toString();
+    var window = (function(){return this;}());
+    var path = window.location.toString();
     var q = path.lastIndexOf("?");
     if ( q >= 0 ) {
       path = path.slice(0,q);
@@ -67,7 +69,7 @@
       return "";
     }
     var filename = path.slice(slash+1);
-    if (filename == "spec_runner.html"){
+    if (filename === "spec_runner.html"){
       return "";
     }
     path = path.slice(0,slash);
@@ -76,12 +78,12 @@
   };
 
   var load_file = function(filename) {
-    var contents = undefined;
-    x = $.ajax({ url: filename,
+    var contents;
+    $.ajax({ url: filename,
              dataType: "text/javascript",
              async: false,
              error: function( xhr ) {
-               if(xhr.status != 404 && xhr.status != 0) {
+               if(xhr.status !== 404 && xhr.status !== 0) {
                  throw "error on load_file xhr for " + filename + ": " + xhr.status;
                }
              },
@@ -126,8 +128,8 @@
   };
 
   var run_specs = function(){
-    var run = !!this.Envjs;
-    if(!this.jazrb_root) {
+    var run = !!global.Envjs;
+    if(!global.jazrb_root) {
       return false;
     }
     if ( !run ) {
@@ -138,7 +140,7 @@
           var kv = this.split("=");
           var k = kv[0];
           var v = kv[1];
-          if(k == "specs"){
+          if(k === "specs"){
             run = true;
           }
         });
@@ -155,10 +157,10 @@
 
   if( run_specs() ){
 
-    if(this.jasmine && !this.Envjs) {
-      var embedded = window.location != "about:blank";
+    if(global.jasmine && !global.Envjs) {
+      var embedded = window.location+"" !== "about:blank";
 
-          var jasmineEnv = jasmine.getEnv();
+      var jasmineEnv = jasmine.getEnv();
       jasmineEnv.updateInterval = 1000;
 
       if(embedded) {
@@ -179,4 +181,4 @@
     }
   }
 
-})(jQuery);
+}(jQuery));

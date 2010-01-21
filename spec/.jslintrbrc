@@ -1,0 +1,11 @@
+{ "predef": [ "jQuery",
+              "window",
+              "it",
+              "expect",
+              "eventually",
+              "wait_for",
+              "incomplete",
+              "complete",
+              "beforeEach",
+              "afterEach",
+              "describe" ] }

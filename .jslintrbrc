@@ -1,0 +1,7 @@
+{ "indent": 2,
+  "predef": [ "Dramatis" ],
+  "white": false,
+  "onevar": false,
+  "nomen": false,
+  "regexp": false,
+  "plusplus": false }

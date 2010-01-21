@@ -10,3 +10,9 @@
 [submodule "vendor/underscore"]
 	path = vendor/underscore
 	url = git://github.com/documentcloud/underscore.git
+[submodule "vendor/jquery.print"]
+	path = vendor/jquery.print
+	url = git://github.com/smparkes/jquery.print.git
+[submodule "vendor/jquery.svg"]
+	path = vendor/jquery.svg
+	url = git://github.com/smparkes/jquery.svg.git

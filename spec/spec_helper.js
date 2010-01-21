@@ -63,7 +63,7 @@ jazrb_root = this.jazrb_root || "..";
     document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jsrat/src/jsrat/elements/field.js'></script>");
     document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jsrat/src/jsrat/elements/link.js'></script>");
     document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jsrat/src/jsrat/elements/label.js'></script>");
-    document.write("<script type='text/javascript' src='" + jazrb_root + "/spec/jquery.print.js'></script>");
+    document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jquery.print/dist/jquery.print.js'></script>");
     document.write("<script type='text/javascript' src='" + jazrb_root + "/spec/spec_runner.js'></script>");
   }
 })();

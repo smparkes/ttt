@@ -3,7 +3,7 @@
   jsrat.Scope = function Scope(session, fn) {
     this._session = session;
 
-    if(fn){
+    if (fn) {
       fn.call(this);
     }
 
@@ -29,7 +29,7 @@
                                                     jsrat.TextareaField,
                                                     jsrat.PasswordField);
       field.raise_error_if_disabled();
-      return field.set(options["with"]);
+      return field.set(options["using"]);
     },
     dom: function dom() {
       if(this._dom) {

@@ -62,8 +62,8 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
         });
 
         it("should return the game to the players",function(){
-          var tom = {};
-          var jerry = {};
+          var tom = { player_name: function(){ return "tom"; }};
+          var jerry = { player_name: function(){ return "tom"; }};
           var toms_game;
           var jerrys_game;
           this.server.join(tom, function(game) {
@@ -84,9 +84,9 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
         });
         
         it("should count active players",function(){
-          this.server.join({});
-          this.server.join({});
-          this.server.join({});
+          this.server.join({player_name: function(){ return "player"; }});
+          this.server.join({player_name: function(){ return "player"; }});
+          this.server.join({player_name: function(){ return "player"; }});
           this.server.players(function(players){
             expect(players).toBe(3);
             complete();
