@@ -1,5 +1,6 @@
 "use strict";
 /*global Dramatis, jQuery, window, jasmine, jazrb_root*/
+/*jslint evil:true */
 (function($){
   var global = (function(){return this;}()); 
   var real_include = global.include || jasmine.include;

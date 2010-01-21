@@ -140,7 +140,7 @@ jslint = lambda do |*args|
   end
 end
 
-watch( %r(^((spec|lib|public)/.*)\.js$), [ :load, :created, :modified ],
+false && watch( %r(^((spec|lib|public)/.*)\.js$), [ :load, :created, :modified ],
        nil, :batch => :jslint ) do |events|
   jslint.call events
 end
