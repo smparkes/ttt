@@ -1,3 +1,4 @@
+"use strict";
 include(jazrb_root + '/spec/lib/spec_helper.js');
 include(jazrb_root + '/vendor/dramatis/lib/dramatis.js');
 include(jazrb_root + '/vendor/dramatis/lib/dramatis/class.js');

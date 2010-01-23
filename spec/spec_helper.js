@@ -1,6 +1,9 @@
-jazrb_root = this.jazrb_root || "..";
-(function(){
-  var run = !!this.Envjs;
+/*jslint evil: true*/
+"use strict";
+var jazrb_root = (function(){return this;}()).jazrb_root || "..";
+(function($){
+  var global = (function(){return this;}());
+  var run = !!global.Envjs;
   var match = /\?([^?]+)$/.exec(window.location.href);
   if(match){
     var pairs = match[1].split("&");
@@ -8,12 +11,13 @@ jazrb_root = this.jazrb_root || "..";
       var kv = this.split("=");
       var k = kv[0];
       var v = kv[1];
-      if(k == "specs"){
+      if(k === "specs"){
         run = true;
       }
     });
   }
   if(run) {
+    var document = global.document;
     if(!this.jasmine){
       document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jazrb/vendor/jasmine/src/base.js'></script>");
       document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jazrb/vendor/jasmine/src/util.js'></script>");
@@ -45,9 +49,11 @@ jazrb_root = this.jazrb_root || "..";
         cssNode.href = jazrb_root + "/vendor/jazrb/vendor/jasmine/lib/jasmine.css";
         cssNode.media = 'screen';
         headID.appendChild(cssNode);
-      })();
-    };
-    !this.jQuery && document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jquery/dist/jquery.js'></script>");
+      }());
+    }
+    if (!global.jQuery) {
+      document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jquery/dist/jquery.js'></script>");
+    }
     document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/underscore/underscore.js'></script>");
     document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jsrat/src/jsrat.js'></script>");
     document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jsrat/src/jsrat/session.js'></script>");
@@ -66,4 +72,4 @@ jazrb_root = this.jazrb_root || "..";
     document.write("<script type='text/javascript' src='" + jazrb_root + "/vendor/jquery.print/dist/jquery.print.js'></script>");
     document.write("<script type='text/javascript' src='" + jazrb_root + "/spec/spec_runner.js'></script>");
   }
-})();
+}(jQuery));

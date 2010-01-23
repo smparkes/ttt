@@ -1,8 +1,8 @@
-jazrb_root = this.jazrb_root || ".";
+"use strict";
+var jazrb_root = (function(){return this;}()).jazrb_root || ".";
 include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
 
-(function(){
-
+(function($){
   var Server = TTT.Server.Actor;
 
   describe("ttt",function(){
@@ -16,16 +16,16 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
         // debug((new Server) instanceof Dramatis.Actor.Name);
         // debug((new Server) instanceof Server.Name);
         //debug("X",$.print(Server.prototype));
-        expect(new Server).toBeDefined();
+        expect(new Server()).toBeDefined();
       });
 
       it("should return an actor name",function(){
         // debug($.print(new Server));
-        expect(new Server).toEqual(any(Server.Name));
+        expect(new Server()).toEqual(any(Server.Name));
       });
 
       it("should be stoppable",function(){
-        expect((new Server).stop()).toBeUndefined();
+        expect((new Server()).stop()).toBeUndefined();
       });
 
       xit("should create a default view if given constructor argument",function(){
@@ -43,7 +43,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
       });
 
       xit("should support pub/sub",function(){
-        var server =  new Server;
+        var server =  new Server();
         server.add_subscription(new Dramatis.Continuation({},"method"));
         server.stop();
       });
@@ -51,7 +51,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
       describe("running games",function(){
 
         beforeEach(function(){
-          this.server = new Server;
+          this.server = new Server();
         });
 
         xit("should allow players to join a game",function(){
@@ -108,4 +108,4 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
     });
   });
 
-})();
+}(jQuery));

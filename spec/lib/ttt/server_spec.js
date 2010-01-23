@@ -1,17 +1,17 @@
-jazrb_root = this.jazrb_root || ".";
+"use strict";
+var jazrb_root = (function(){return this;}()).jazrb_root || ".";
 include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
 
-(function(){
-
+(function($){
   describe("ttt",function(){
     describe("server",function(){
 
       it("should be default creatable",function(){
-        expect(new TTT.Server).toBeDefined();
+        expect(new TTT.Server()).toBeDefined();
       });
 
       it("should be stoppable",function(){
-        expect((new TTT.Server).stop()).toBeUndefined();
+        expect((new TTT.Server()).stop()).toBeUndefined();
       });
 
       it("should provide a scope",function(){
@@ -33,7 +33,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
       });
 
       it("should support pub/sub",function(){
-        var server =  new TTT.Server;
+        var server =  new TTT.Server();
         server.add_subscription(new Dramatis.Continuation({},"method"));
         server.stop();
       });
@@ -41,7 +41,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
       describe("running games",function(){
 
         beforeEach(function(){
-          this.server = new TTT.Server;
+          this.server = new TTT.Server();
         });
 
         it("should allow players to join a game",function(){
@@ -98,4 +98,4 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
     });
   });
 
-})();
+}(jQuery));

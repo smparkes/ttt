@@ -3,10 +3,8 @@
 
   var debug = window.console && window.console.debug || window.debug;
 
-  with($.jsrat){
-  
-  // var fill_in = function(){ return $.jsrat.fill_in.apply($.jsrat,arguments); };
-  // var click_link = function(){ return $.jsrat.click_link.apply($.jsrat,arguments); };
+  var fill_in = $.jsrat.fill_in;
+  var click_link = $.jsrat.click_link;
 
   describe("ttt",function(){
     describe("both",function(){
@@ -158,7 +156,5 @@
 
     });
   });
-};
-
 
 }(jQuery));

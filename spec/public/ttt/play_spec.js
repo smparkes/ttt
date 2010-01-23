@@ -1,4 +1,5 @@
-this.jazrb_root = this.jazrb_root || ".";
+"use strict";
+(function(){return this;}()).jazrb_root = (function(){return this;}()).jazrb_root || ".";
 include(jazrb_root + "/spec/public/ttt/spec_helper.js");
 
 (function($){
@@ -54,4 +55,4 @@ include(jazrb_root + "/spec/public/ttt/spec_helper.js");
   });
 
 
-})(jQuery);
+}(jQuery));

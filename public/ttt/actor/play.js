@@ -1,3 +1,4 @@
+"use strict";
 (function($){
  
  var debug = this.debug || ( this.console && this.console.debug );
@@ -33,7 +34,7 @@
             return function name() {
               method.apply(self,arguments);
             };
-          })(name,method);
+          }(name,method));
         }
         this.element = element;
         this.element.data("behavior",this);
@@ -46,12 +47,13 @@
       enable: function enable(){
         this.enable_changes();
         this.input.change();
-        return;
+/*
         this.disable_changes();
         this.element.find(".value a").removeAttr("href","#").unbind("click");
         this.element.find(".control a").
           removeAttr("href","#").
           unbind("click");
+*/
       },
       disable: function disable(){
         this.disable_changes();
@@ -96,14 +98,14 @@
       Control.apply(this,arguments);
       this.disable_changes();
     };
-    Server.prototype = new Control;
+    Server.prototype = new Control();
     Server.prototype.constructor = Server;
     $.extend( Server.prototype, {
       leave: function leave() {
         this.element.find(".control a").text(this.enabled_text);
       }
     });
-    new Server($("#server"));
+    (new Server($("#server")));
 
     var Connection = function Connection() {
       this.enabled_text = "Connect";
@@ -114,7 +116,7 @@
       server.disable();
       server.leave();
     };
-    Connection.prototype = new Control;
+    Connection.prototype = new Control();
     Connection.prototype.constructor = Connection;
     $.extend( Connection.prototype, {
       connect: function connect() {
@@ -124,7 +126,7 @@
         Dramatis.connect(this.input.val(), function connected() {
           self.element.find(".status").text("Connected");
         }, function( reason ) {
-          if(reason+"" == "0"){
+          if(reason+"" === "0"){
             reason = "same domain violation";
           }
           self.disconnect();
@@ -142,8 +144,8 @@
         server.leave();
       }
     });
-    new Connection($("#client"));
+    (new Connection($("#client")));
 
   });
 
-})(jQuery);
+}(jQuery));

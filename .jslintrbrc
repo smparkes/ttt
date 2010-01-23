@@ -1,5 +1,5 @@
 { "indent": 2,
-  "predef": [ "Dramatis", "TTT", "jQuery", "window" ],
+  "predef": [ "Dramatis", "TTT", "Raphael", "jQuery", "window" ],
   "white": false,
   "onevar": false,
   "nomen": false,

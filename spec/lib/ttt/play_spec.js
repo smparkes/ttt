@@ -1,4 +1,5 @@
-jazrb_root = this.jazrb_root || ".";
+"use strict";
+var jazrb_root = (function(){return this;}()).jazrb_root || ".";
 include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
 
 (function(){
@@ -7,9 +8,9 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
     describe("play",function(){
 
       it("should play a game",function(){
-        var server = new TTT.Server;
-        var tom = new TTT.Player;
-        var jerry = new TTT.Player;
+        var server = new TTT.Server();
+        var tom = new TTT.Player();
+        var jerry = new TTT.Player();
 
         // join a game ...
         tom.join( server );
@@ -19,4 +20,4 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
     });
   });
 
-})();
+}());

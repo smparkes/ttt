@@ -1,3 +1,4 @@
+"use strict";
 (function($){
   var debug = window.console && window.console.debug || window.debug;
   $(function(){
@@ -19,10 +20,10 @@
     });
 
     $(stop_server).live("click",function stop_server(){
-      var undefined;
+      var undef;
       var server = $("#server").data("server");
       server.stop();
-      $("#server").data("server",undefined);
+      $("#server").data("server",undef);
       $(join_game).hide();
       $(this).text("Start server");
       return false;
@@ -43,7 +44,7 @@
       var div = $("#games");
       var player = new TTT.Player( $(player_name).val() );
       $("#server").data("server").join( player, function(game, index){
-        new TTT.Game.View.SVG( game, index, div );
+        (new TTT.Game.View.SVG( game, index, div ));
       } );
       return false;
     });
@@ -53,4 +54,4 @@
     $(player_name).change();
 
   });
-})(jQuery);
+}(jQuery));

@@ -1,6 +1,8 @@
 { "predef": [ "jQuery",
               "window",
+              "jasmine",
               "it",
+              "xit",
               "expect",
               "eventually",
               "wait_for",
@@ -8,4 +10,9 @@
               "complete",
               "beforeEach",
               "afterEach",
-              "describe" ] }
+              "describe",
+              "spyOn",
+              "jazrb_root",
+              "include",
+              "Dramatis",
+              "TTT" ] }
