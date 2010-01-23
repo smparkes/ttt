@@ -146,6 +146,7 @@ watch( %r(^((spec|lib|public)/.*)\.js$), [ :load, :created, :modified ],
 end
 
 watch( %r(^(spec/.*[Ss]pec)\.js$), [ :load, :created, :modified ], nil, :batch => :js ) do |events|
+  jslint.call events
   jazrb.call events
 end
 
