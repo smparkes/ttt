@@ -21,10 +21,20 @@ specs = specs.select do |spec|
   end
   !File.exist?(html)
 end
-files = files.join("?specs=true' '#{prefix}")
-files = "'#{prefix}#{files}?specs=true'" if files
-app = "firefox"
-cmd = "#{app} #{files} '#{runner}?specs=#{URI.escape(specs.to_json)}'"
 
-puts cmd
-system cmd
+if false
+  files = files.join("?specs=true' '#{prefix}")
+  files = "'#{prefix}#{files}?specs=true'" if files
+  app = "firefox"
+  cmd = "#{app} #{files} '#{runner}?specs=#{URI.escape(specs.to_json)}'"
+  puts cmd
+  system cmd
+else
+  files = files.map{ |file| "'#{prefix}#{file}?specs=true'" }
+  for file in files+["'#{runner}?specs=#{URI.escape(specs.to_json)}'"] do
+    app = "firefox"
+    cmd = "#{app} #{file}"
+    puts cmd
+    system cmd
+  end
+end
