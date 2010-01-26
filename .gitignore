@@ -1,6 +1,7 @@
 /.sass-cache
-/.ttt.watchr.deps
 /public/*.html
 /public/*/*.html
 /public/*/*.css
 /spec/*.html
+/.*.wk.deps
+/.Wakefile.deps
