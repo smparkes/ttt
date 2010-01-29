@@ -19,6 +19,7 @@ include(jazrb_root + '/lib/ttt.js');
 include(jazrb_root + '/lib/ttt/class.js');
 include(jazrb_root + '/lib/ttt/server.js');
 include(jazrb_root + '/lib/ttt/server/view.js');
+include(jazrb_root + '/lib/ttt/server/view/actor.js');
 include(jazrb_root + '/lib/ttt/game.js');
 include(jazrb_root + '/lib/ttt/game/view.js');
 include(jazrb_root + '/lib/ttt/game/view/table.js');
