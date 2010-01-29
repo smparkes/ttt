@@ -1,7 +1,9 @@
 "use strict";
 (function($){
  
- var debug = this.debug || ( this.console && this.console.debug );
+  window.vendor = "../../../vendor";
+
+  var debug = this.debug || ( this.console && this.console.debug );
 
   $(function(){
 

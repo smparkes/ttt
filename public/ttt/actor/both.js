@@ -45,7 +45,7 @@
       var player = new TTT.Player.Actor( $(player_name).val() );
       // debug("new player");
       $("#server").data("server").join( player, function(game, index){
-        (new TTT.Game.View.SVG( game, index, div ));
+        (new TTT.Game.View.SVG.Actor( game, index, div ));
       } );
       return false;
     });

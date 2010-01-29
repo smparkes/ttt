@@ -31,6 +31,7 @@
   document.write("<script src='../../../lib/ttt/game/view.js' type='text/javascript'></script>");
   document.write("<script src='../../../lib/ttt/game/view/table.js' type='text/javascript'></script>");
   document.write("<script src='../../../lib/ttt/game/view/svg.js' type='text/javascript'></script>");
+  document.write("<script src='../../../lib/ttt/game/view/svg/actor.js' type='text/javascript'></script>");
   document.write("<script src='../../../lib/ttt/server.js' type='text/javascript'></script>");
   document.write("<script src='../../../lib/ttt/server/view.js' type='text/javascript'></script>");
   document.write("<script src='../../../lib/ttt/player.js' type='text/javascript'></script>");
