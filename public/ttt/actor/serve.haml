@@ -8,4 +8,8 @@
 
     #server
 
+    %script{:type => "text/javascript"}
+      var debug = window.console && window.console.debug || window.debug;
+      false && debug && debug(window.location.href);
+
     %script{:type => "text/javascript", :src=>"spec_helper.js"}

@@ -1,6 +1,7 @@
 /.sass-cache
 /public/*.html
 /public/*/*.html
+/public/*/*/*.html
 /public/*/*.css
 /spec/*.html
 /.*.wk.deps

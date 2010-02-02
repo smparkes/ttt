@@ -1,0 +1,57 @@
+"use strict";
+(function(){return this;}()).jazrb_root = (function(){return this;}()).jazrb_root || ".";
+include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
+
+(function($){
+  describe("ttt",function(){
+    describe("pubsub",function(){
+
+      beforeEach(function(){
+        this.subscriber = function(){};
+        $.extend(this.subscriber.prototype,TTT.Subscriber.prototype);
+        this.publisher = function(){};
+        $.extend(this.publisher.prototype,TTT.Publisher.prototype);
+        this.sub = new this.subscriber();
+        this.pub = new this.publisher();
+      });
+
+      it("should be possible to subscribe to a publisher",function(){
+        this.sub.subscribe({to: this.pub, call: "method"});
+      });
+
+      it("should receive callbacks on publisher changes",function(){
+        var hash = {a: "b"};
+        this.sub.subscribe({to: this.pub, call: "method"});
+        this.sub.method = function method(state) {
+          expect(state).toEqual(hash);
+          complete();
+        };
+        this.pub.notify(hash);
+        incomplete();
+      });
+
+      it("should receive an initial state if asked", function() {
+        var hash = {a: "b"};
+        this.sub.method = function method(state) {
+          expect(state).toEqual(hash);
+          complete();
+        };
+        this.pub.update = function update() {
+          this.notify(hash);
+        };
+        this.sub.subscribe({to: this.pub, call: "method", initial: true});
+        incomplete();
+      });
+
+      it("should only send state to new object on init request");
+
+      it("should be possible to unsubscribe", function() {
+        pending();
+      });
+
+      it("should not receive callbacks after unsub");
+
+    });
+
+  });
+}(jQuery));

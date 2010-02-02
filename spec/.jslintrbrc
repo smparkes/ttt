@@ -3,6 +3,7 @@
               "jasmine",
               "it",
               "xit",
+              "pending",
               "expect",
               "eventually",
               "wait_for",

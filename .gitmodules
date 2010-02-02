@@ -16,3 +16,6 @@
 [submodule "vendor/jquery.svg"]
 	path = vendor/jquery.svg
 	url = git://github.com/smparkes/jquery.svg.git
+[submodule "vendor/strophejs"]
+	path = vendor/strophejs
+	url = git://github.com/smparkes/strophejs.git

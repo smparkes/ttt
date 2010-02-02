@@ -17,6 +17,8 @@ include(jazrb_root + '/vendor/dramatis/lib/dramatis/actor/name.js');
 include(jazrb_root + '/vendor/dramatis/lib/dramatis/actor/name/type.js');
 include(jazrb_root + '/lib/ttt.js');
 include(jazrb_root + '/lib/ttt/class.js');
+include(jazrb_root + '/lib/ttt/publisher.js');
+include(jazrb_root + '/lib/ttt/subscriber.js');
 include(jazrb_root + '/lib/ttt/server.js');
 include(jazrb_root + '/lib/ttt/server/actor.js');
 include(jazrb_root + '/lib/ttt/server/view.js');

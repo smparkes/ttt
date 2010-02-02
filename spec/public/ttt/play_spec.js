@@ -36,22 +36,6 @@ include(jazrb_root + "/spec/public/ttt/spec_helper.js");
       expect($("#client .control a").attr("href")).toBeDefined();
     });
 
-    it("should connect on click",function(){
-      $("#client .value a").eq(0).click();
-      spyOn(Dramatis,"connect");
-      $("#client .control a").click();
-      expect(Dramatis.connect).wasCalledWith($("#client .value a .url").eq(0).text().trim(),
-                                             jasmine.any(Function),
-                                             jasmine.any(Function)
-                                             );
-      expect($("#client input").attr("disabled")).toBe(true);
-      expect($("#client .control a").text()).toBe("Disconnect");
-      $("#client .value a").each(function(){
-        expect($(this).attr("href")).toBe(undefined);
-      });
-      $("#client .control a").click();
-    });
-
   });
 
 
