@@ -18,4 +18,4 @@
 	url = git://github.com/smparkes/strophejs.git
 [submodule "vendor/jazz"]
 	path = vendor/jazz
-	url = https://smparkes@github.com/smparkes/jazz.git
+	url = git://github.com/smparkes/jazz.git
