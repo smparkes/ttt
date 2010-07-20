@@ -2,10 +2,11 @@
 "use strict";
 (function(){
   var global = (function(){return this;}());
-  global.ttt_top = global.ttt_top || "../../..";
+  global.ttt_top = global.ttt_top || "../../../";
 
   document.write("<script src='../ttt.js' type='text/javascript'></script>");
 
+/*
   document.write("<script src='"+global.ttt_top+"/vendor/dramatis/lib/dramatis.js' type='text/javascript'></script>");
   document.write("<script src='"+global.ttt_top+"/vendor/dramatis/lib/dramatis/class.js' type='text/javascript'></script>");
   document.write("<script src='"+global.ttt_top+"/vendor/dramatis/lib/dramatis/runtime.js' type='text/javascript'></script>");
@@ -33,4 +34,5 @@
   document.write("<script src='"+global.ttt_top+"/lib/ttt/server/actor.js' type='text/javascript'></script>");
   document.write("<script src='"+global.ttt_top+"/lib/ttt/player/actor.js' type='text/javascript'></script>");
   document.write("<script src='"+global.ttt_top+"/lib/ttt/game/actor.js' type='text/javascript'></script>");
+*/
 }());

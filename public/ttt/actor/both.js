@@ -1,13 +1,25 @@
 "use strict";
 (function($){
   var debug = window.console && window.console.debug || window.debug;
+
+  var join_game;
+
+  var on_player_name_change = function on_player_name_change(){
+    var val = $(this).val();
+    if(val && !val.match(/^\s*$/)){
+      $(join_game).attr("href","#");
+    } else {
+      $(join_game).removeAttr("href");
+    }
+  };
+    
   $(function(){
 
     window.vendor = "../../../vendor";
 
     var start_server = "a:contains('Start server')";
     var stop_server = "a:contains('Stop server')";
-    var join_game = "a:contains('Join a game')";
+    join_game = "a:contains('Join a game')";
     var player_name = "label:contains('Player name') input";
 
     $(join_game).hide();
@@ -29,15 +41,6 @@
       return false;
     });
 
-    var on_player_name_change = function on_player_name_change(){
-      var val = $(this).val();
-      if(val && !val.match(/^\s*$/)){
-        $(join_game).attr("href","#");
-      } else {
-        $(join_game).removeAttr("href");
-      }
-    };
-    
     $(player_name).change(on_player_name_change).keyup(on_player_name_change);
 
     $(join_game).click(function join_game(){

@@ -1,7 +1,7 @@
 "use strict";
 (function($){
  
- var debug = this.debug || ( this.console && this.console.debug );
+  var debug = this.debug || ( this.console && this.console.debug );
 
   $(function(){
 
@@ -27,14 +27,15 @@
       if(element){
         var self = this;
         var methods = [ "connect", "disconnect" ];
+        var fn = function(name,method){
+          return function name() {
+            method.apply(self,arguments);
+          };
+        };
         for(var m in methods) {
           var name = methods[m];
           var method = this[name];
-          this[name] = (function(name,method){
-            return function name() {
-              method.apply(self,arguments);
-            };
-          }(name,method));
+          this[name] = (fn(name,method));
         }
         this.element = element;
         this.element.data("behavior",this);

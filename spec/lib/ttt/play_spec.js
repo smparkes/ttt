@@ -1,7 +1,4 @@
 "use strict";
-var jazrb_root = (function(){return this;}()).jazrb_root || ".";
-include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
-
 (function(){
 
   describe("ttt",function(){
@@ -15,6 +12,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
         // join a game ...
         tom.join( server );
         jerry.join( server );
+        expect(true).toBe(true);
       });
 
     });

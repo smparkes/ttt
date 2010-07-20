@@ -1,4 +1,0 @@
-zoom
-pan
-dead player
-dead server

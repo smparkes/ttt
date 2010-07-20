@@ -4,5 +4,4 @@
 /public/*/*/*.html
 /public/*/*.css
 /spec/*.html
-/.*.wk.deps
-/.Wakefile.deps
+/.wake

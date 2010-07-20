@@ -4,4 +4,6 @@
   "onevar": false,
   "nomen": false,
   "regexp": false,
-  "plusplus": false }
+  "plusplus": false,
+  "void": true,
+  "newside": true }

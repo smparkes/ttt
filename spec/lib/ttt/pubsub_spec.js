@@ -1,7 +1,4 @@
 "use strict";
-(function(){return this;}()).jazrb_root = (function(){return this;}()).jazrb_root || ".";
-include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
-
 (function($){
   describe("ttt",function(){
     describe("pubsub",function(){
@@ -47,7 +44,7 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
         this.sub.method = function method(state) {
           expect(false).toBe(true);
         };
-        setTimeout(function(){
+        window.setTimeout(function(){
           complete();
         },100);
         this.pub.notify(hash);
@@ -72,12 +69,12 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
           expect(state).toEqual(hash);
           this.method = function(state) {
             expect(true).toBe(false);
-          }
+          };
         };
         this.sub.method = function method(state) {
           expect(state).toEqual(hash);
         };
-        setTimeout(function(){
+        window.setTimeout(function(){
           complete();
         },100);
         this.sub2.subscribe({to: this.pub, call: "method"});
@@ -96,9 +93,9 @@ include(jazrb_root + "/spec/lib/ttt/spec_helper.js");
           expect(state).toBe(hash);
           this.method = function (state) {
             expect(false).toBe(true);
-          }
+          };
         };
-        setTimeout(function(){
+        window.setTimeout(function(){
           complete();
         },100);
         this.sub.subscribe({to: this.pub, call: "method"});

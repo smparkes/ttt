@@ -4,9 +4,6 @@
 [submodule "vendor/dramatis"]
 	path = vendor/dramatis
 	url = git://github.com/dramatis/dramatis.git
-[submodule "vendor/jazrb"]
-	path = vendor/jazrb
-	url = git@github.com:smparkes/jazrb.git
 [submodule "vendor/underscore"]
 	path = vendor/underscore
 	url = git://github.com/documentcloud/underscore.git
@@ -19,3 +16,6 @@
 [submodule "vendor/strophejs"]
 	path = vendor/strophejs
 	url = git://github.com/smparkes/strophejs.git
+[submodule "vendor/jazz"]
+	path = vendor/jazz
+	url = https://smparkes@github.com/smparkes/jazz.git
