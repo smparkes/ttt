@@ -1,0 +1,119 @@
+Test and Behavior Driven Development in JavaScript
+
+If you're building a web application today, JavaScript is one of the
+most important foundations on which your application is built. There are
+a lot of libraries available to help you rapidly and easily _use_ JavaScript to
+great effect. _Testing_ that code, well, that's a different matter.
+
+Java has JUnit. Ruby has Test::Unit and RSpec. Python has unittest and Nose.
+
+JavaScript has a number of unit test frameworks as well, but they see far
+less use than those seen in other languages. What JavaScript doesn't
+have is an environment that makes it easy for a developer to write and
+run their tests without breaking their train of thought.
+
+In Java you run Eclipse or ant. In Ruby you run rake or autotest. In
+python you run python or nose.
+
+In JavaScript, you write your code, create an HTML fixture page to
+test that code, load that page in browser, click a few times, and look
+to see if the result looks right. Then you switch back to your editor,
+modify your code, bring the browser up again, hit browser refresh, click, look ...
+
+Or, more likely, you don't. At least not very often.
+
+And if you do run tests, you only run the tests you think you broke,
+rather than the ones you actually did break.
+
+Much of this is because in JavaScript it has been harder to _run_
+tests than it has been to _write_ them.
+
+It's now possible to do much better than
+edit/refresh/look/repeat. Borrowing heavily from best practices in
+other languages, it's now possible to make JavaScript unit testing as
+easy as in, say, Ruby:
+
+* Without ever leaving your editor/IDE
+* Running tests without a browser
+* Running all tests in the browser quickly
+
+In this talk we'll walk through the process of developing/modifying a
+JavaScript browser-based application in a test-first manner, showing
+how every step can be automated for immediate feedback to the
+developer.
+
+Highlights:
+
+* Running tests without an HTML fixture
+* Running tests against production HTML in situ
+* Test driven development with qunit
+* Behavior-driven development with jasmine
+* Using SpiderMonkey and Johnson to run JavaScript out of the browser _fast_
+* Using env.js to test within the browser environment without a browser
+* Using jazrb to run jasmine and qunit tests from the command line and get RSpec or JUnit output
+* Using wake to run all affected tests (and jslint!) on every save
+* Testing asynchronous JavaScript
+
+1 Writing asynchronous tests
+
+packaging/building/serving
+
+you *can* test all your JavaScript with refresh
+do you want to?
+
+in browser/out of browser
+
+designer vs. javascript developer
+
+xunit
+
+code is pretty much available now
+
+fixture
+
+demo soup to nuts
+
+As the lingua franca of the web, JavaScript is the 
+
+Reliable
+Agile
+
+JavaScript is the lingua franca of the web
+JavaScript is the lingua franca of the mobile web
+
+SpiderMonkey
+env.js
+jslint
+
+build
+
+javascript testing without the browser
+
+selenium
+
+unit testing vs. functional testing vs. integration testing
+
+javascript
+  javascript vs. the browser
+  browser event model
+  asynchronous
+
+asynchronous!
+
+testing frameworks
+  qunit
+  jasmine
+  ScrewUnit
+
+real-time TDD
+
+intermediate
+p
+single page/multiple page
+
+jazrb
+  eventmachine
+wake
+jslintrb
+
+CI
