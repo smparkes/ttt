@@ -1,9 +1,12 @@
 * Test and Behavior Driven Development in JavaScript
-* Intro/Context
-** JavaScript means different things to different people
-** ChessFlock
+* 3 Intro/Context
+** 1 JavaScript means different things to different people
+*** onclick
+*** node.js
+*** "HTML5" (me)
+** 2 ChessFlock
 *** demo
-*** tests
+*** run tests
 *** motivation
 **** html5 app
 **** svg
@@ -13,250 +16,251 @@
 ***** xmpp-based ipc
 *** caveats
 **** incomplete
-**** low test coverage
+**** chessflock has somewhat low test coverage
 **** rationalization
 ***** throw one away
 ***** test bed for dramatis, etc.
 **** some egregiously bad stuff in there
+* 3 TDD
+** 1 Tenants of TDD
+*** writing the tests first
+*** RGR
+** 1 Kinds of tests
+*** Unit 
+**** Indivisible unit
+**** monolingual
+***** assertions
+***** mocks/stubs
+*** Integration
+**** Multiple units
+**** Monolingual or polylingual
+**** Approaches
+***** Unintegrated
+****** Selenium/Watir
+***** Integrated
+****** webrat/capybara
+****** Most appropriate for testing webapps
+*** System
+** 1 Focusing on unit/monolingual integration
+*** test in the single lanaguage: JavaScript
+*** Developer RGR experience
+* 3 JavaScript
+** 1 The language
+*** Small (& fast)
+*** Implementations
+***** SpiderMonkey (Mozilla)
+***** v8 (Chrome)
+***** SquirrelFish (Safari)
+***** Rhino (Java)
+*** No * (for most *)
+**** I/O
+**** Packaging
+**** Like C ... without the standard library
+**** A very small standard library
+** The "standard" libraries/environments
+*** CommonJS
+*** Browser
+**** DOM
+**** window(s)
+**** Timers/events/event loop
+**** XMLHTTPRequest
+**** Collectively "HTML5"
+**** Debugging
+**** Implementations
+***** Browsers
+***** Outside the browser
+****** HTMLUnit (Rhino)
+****** Env.js (Rhino and SpiderMonkey)
+** JavaScript vs 
+*** Dynamically typed
+**** not writing tests is grounds to be 5150d
+**** propritonally to amount/complexity of JS
+*** Asynchronous/event-drivent
+*** writing JS tests
+**** "normal"-ish
+**** "unique"-ish
+***** async/event-driven/no main
 
-* TDD
-** writing the tests first
-
-* Kinds of tests
-** Unit        
-** Integration
-*** Approaches
-**** Unintegrated
-***** Selenium/Watir
-**** Integrated
-***** webrat/capybara
-***** Most appropriate for testing webapps
-
-* JavaScript
-** The language
-** The libraries/environments
-
-* JavaScript vs X
-** Dynamically typed
-*** not writing tests is grounds for involunatry commitment
-** Asynchronous
-** Event-driven
-*** document.write vs ajax
-
-* Testing frameworks
-**  qunit
-*** Test-unit like
-*** Very simple
+** Debuggers
+**** console.*
+**** developer tool panels
+**** Firebug (Firefox)
+**** Developer Tools (WebKit)
+* 10 Javascript Testing Frameworks
+** 1 But first
+*** JSLint: in a class of its own
+*** File this under 5150 as well
+** TDD: qunit
 *** Resig
 **** jQuery, env-js
-*** Example
-*** Beyond the simple: async
-**** expect
-**** stop
-**** start
-** Jasmine
-*** RSpec
-*** Screw-Unit
+*** Pretty xunit like
+*** 2 Synch example
+**** test, modules, setup, teardown
+**** assertions: ok, equals, same
+*** 5 Beyond the simple: async
+**** callbacks, often timeout based
+***** Browser events are always asynchrnous
+***** Code may or may not make callback synchrnously
+**** 2 expect/stop/start
+**** 3 Test queues
+***** Schedule runner to run at document load/after timeout
+***** Collect all tests as declared
+***** On callback
+*****   For each test: run and record results
+***** What if test relies on a callback?
+*****   Nothing magic: callback can't be scheduled until the test runner returns
+***** At stop:
+*****  Test runner records that the runner is paused
+*****  Test runner records that test is incomplete
+*****  Optionally test runner sets timeout to be restarted 
+*****  Test runner retuns
+***** SOmetime in the future (hopefully) your test completes and calls start
+***** Or the test runner timeout gets called
+***** Test runner now records result
+***** Test runner continues loop as normal
+** 2 BDD: Jasmine
+*** Pivotal / RSpec / Screw-Unit
 *** BDD
-**** unlimited nesting
+**** tests
+**** expectations
+**** matchers
+**** before/after
 **** "this"-per test
+**** nesting
+**** Spies (mocks/stubs)
+**** async runs/waits
 ** Others
-**** Fairly fractured
-
-Looked at many of them
-Justice to none
-
-**  Common-ish
-***    Asynch    
-** JSLint: in a class of its own
-** Runners
-
-* Developing JavaScript
-** Dom-related
-** Not DOM related
-** TDD
-*** RGR
-
-* Ready, Set, Go ...
+* 1 Ready, Set, Go ...
+** Write a test then ...
 ** Uh ...
-** Where, When, How, Why
+** What, Where, When, How, Why
+** Where, When, How
+** Goal: developer ease
+*** If writing tests is hard
+*** They won't get written
+*** IF running tests is hard
+*** They wont'get run
+*** If tests dont'get run
+*** They won't get written
+**** (with a detour through bitrot)
 *** Fixtures
 *** Or ...
 
-* Interpreters
-** JavaScript w/o the DOM is a very limited, speicaled library
+** "Make the simple things easy and hard things possible"
+*** DOm-related vs non-DOM related
+*** Asynch vs. synch
+*** Make the hard things possible
+**** and everything else, equally hard
+* 10 Test Runners
+** 1 Load a page/fixture, hit refresh
+*** lather, rinse, repeat
+*** Switch to editor, edit, switch to browser, fresh
+*** This is what IDEs were made for
+*** Some of us don't really like IDEs
+**** Too much kool aid
+**** and/or old farts
+*** Took a while to figure out how bad this sucked
+*** The more impedence, the less testing
+**** Don't run very often
+**** Guess which tests broke
+*** What page?
+*** Load from where?
+*** Start a server
+*** Load a page in a browser
+*** "other"
+**** make/ant/rake
+**** "as easy as setting up a CI server"
+*** Harder than writing the tests
+*** Hard/unpleasant/no-fun to run
+*** suites vs tests vs
+*** JSTestDriver
+*** TestSwarm
+** 1 RGR
+*** Don't know/care about where/when
+*** The cost of developer context switches
+*** incremental/realtime
+**** autotest
+**** wake
+***** dependences
+***** successes/failures
+** What, Where, When, How
+** 1 Where
+*** Where"s"
+*** Fast
+*** Accurate
+*** Most of my mistakes break everywhere
+*** Some stuff is browser-specifc
+** 1 When
+*** When I make a change
+** 1 What
+*** "All affected code"
+*** I don't know the answer to this
+** 1 How
+*** Setup environment
+*** Run tests
+*** Collect/present results
+**** The way I want them
+*** "Make it so"
+** 1 Setup environment
+*** Some tests are JS only
+*** Some tests require an HTML fixture
+*** Some tests want to run inside a real page
+*** Files can be
+**** file://
+****** security restrictions
+**** http server
+***** python -m SimpleHTTPServer
+**** app server
+*** Run all quickly
+** ! Run tests
+*** command line, e.g., rspec variatns
+** 1 Collect/present results
+*** The way I want them
+*** CI, e.g., junit/testng output
+* 3 Fixtures
+** I hate fixtures
+** Generic
+** test-specific
+** in-vitro, in-situ, in-vivo
+*** designer vs developer
+** static/dynamic
+* 3 Me Me Me
+** Write a little, test a little
+** distributed HTML5 applications
+** Dramatis
+*** TTT
+*** ChessFlock
+** Screw-Unit => Jasmine
+** Bluerige => jazz/wake
+* 3 Jasmine fork
+*** incomplete/complete
+*** eventually
+*** wait_for
+* 1 jsrat
+** fill_in
+** click_link
+* 5 jazz
+*** Jasmine runner
+*** automatic fixture (in-vivo and in-situ) detection and pairing
+*** wake integration
+* 5 wake
+*** make/rake + autotest/watchr
+*** eventmachine
+*** runs in background terminal window
+*** graph dependeces/leveling
+*** plugins
+**** bundled
+***** ignore
+***** directories
+***** shell
+***** haml/sass
+***** cache_manifest
+***** graphics: inkscape, batik, rsvg
+***** future: closure, ???
+**** unbundled
+***** jslint
+***** jazz
+**** API 
+***** success
+***** dependence
 
-* JavaScript++
-**  Browsers
-***    Firebug/Developer tools
-**  Browser environments
-***    HTMLUnit (Rhino)
-***    Env.js (Rhino and SpiderMonkey)
-**  CommonJS environments
-***    Node.js
-***    I know next to nothing about this
-
-* Browser++
-**  HTML5 +/-
-**  DOM
-***    document
-***    window
-**  XHR
-***  Timers/event loop
-**  I/O
-***    console.*
-
-* Runners
-**  Load a page/hit refresh
-**  Blueridge (RIP)
-**  Jasmine ruby gem
-
-* Fixtures
-**  I hate fixtures
-**  Generic
-**  test-specific
-**  in-vivo
-**  static/dynamic
-
-*RGR
-**  Refresh
-**  make/ant/rake
-**  incremental/realtime
-***    autotest
-***    wake
-****    dependences
-
-* Me Me Me
-**  TTT
-**  ChessFlock
-**  Dramatis
-**  Screw-Unit => Jasmine
-**  Bluerige => jazz/wake
-**  Jasmine fork
-***    incomplete/complete
-***    eventually
-***    wait_for
-**  Jazz
-***    Jasmine runner
-***    automatic fixture (in-vivo and in-situ) detection and pairing
-***    wake integration
-  wake
-**    make/rake + autotest/watchr
-***    graph dependeces/leveling
-***    API    
-***    plugins
-****      haml/sass
-****      jslint
-****      jazz
-****      cache_manifest
-****      graphics
-***  jsrat
-****    fill_in
-****    click_link
-
-JSTestDriver
-
-TestSwarm
-
-In JavaScript, you write your code, create an HTML fixture page to
-test that code, load that page in browser, click a few times, and look
-to see if the result looks right. Then you switch back to your editor,
-modify your code, bring the browser up again, hit browser refresh, click, look ...
-
-Or, more likely, you don't. At least not very often.
-
-And if you do run tests, you only run the tests you think you broke,
-rather than the ones you actually did break.
-
-Much of this is because in JavaScript it has been harder to _run_
-tests than it has been to _write_ them.
-
-It's now possible to do much better than
-edit/refresh/look/repeat. Borrowing heavily from best practices in
-other languages, it's now possible to make JavaScript unit testing as
-easy as in, say, Ruby:
-
-* Without ever leaving your editor/IDE
-* Running tests without a browser
-* Running all tests in the browser quickly
-
-In this talk we'll walk through the process of developing/modifying a
-JavaScript browser-based application in a test-first manner, showing
-how every step can be automated for immediate feedback to the
-developer.
-
-Highlights:
-
-* Running tests without an HTML fixture
-* Running tests against production HTML in situ
-* Test driven development with qunit
-* Behavior-driven development with jasmine
-* Using SpiderMonkey and Johnson to run JavaScript out of the browser _fast_
-* Using env.js to test within the browser environment without a browser
-* Using jazrb to run jasmine and qunit tests from the command line and get RSpec or JUnit output
-* Using wake to run all affected tests (and jslint!) on every save
-* Testing asynchronous JavaScript
-
-1 Writing asynchronous tests
-
-packaging/building/serving
-
-you *can* test all your JavaScript with refresh
-do you want to?
-
-in browser/out of browser
-
-designer vs. javascript developer
-
-xunit
-
-code is pretty much available now
-
-fixture
-
-demo soup to nuts
-
-As the lingua franca of the web, JavaScript is the 
-
-Reliable
-Agile
-
-JavaScript is the lingua franca of the web
-JavaScript is the lingua franca of the mobile web
-
-SpiderMonkey
-env.js
-jslint
-
-build
-
-javascript testing without the browser
-
-selenium
-
-unit testing vs. functional testing vs. integration testing
-
-javascript
-  javascript vs. the browser
-  browser event model
-  asynchronous
-
-asynchronous!
-
-testing frameworks
-  qunit
-  jasmine
-  ScrewUnit
-
-real-time TDD
-
-intermediate
-p
-single page/multiple page
-
-jazrb
-  eventmachine
-wake
-jslintrb
-
-CI
