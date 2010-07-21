@@ -5,7 +5,8 @@
     describe("serve",function(){
 
       it("should exist",function(){
-        expect($("title:contains('Serve')").size()).toEqual(1);
+        expect($("title:contains('Serve')").size()).
+          toEqual(1);
       });
 
       it("should have a server view",function(){
