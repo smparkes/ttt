@@ -136,7 +136,7 @@
           var games = [ $("#games .game").eq(1), $("#games .game").eq(0) ];
           var player = 0;
           for(var move in moves) {
-                games[player].find(".ttt-cell."+moves[move]).click();
+            games[player].find(".ttt-cell."+moves[move]).click();
             player = 1-player;
           }
           for(var game in games){
