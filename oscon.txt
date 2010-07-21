@@ -1,146 +1,162 @@
-ChessFlock
+* Test and Behavior Driven Development in JavaScript
+* Intro/Context
+** JavaScript means different things to different people
+** ChessFlock
+*** demo
+*** tests
+*** motivation
+**** html5 app
+**** svg
+**** localstorage
+**** offline/cache-manifest
+**** distributed
+***** xmpp-based ipc
+*** caveats
+**** incomplete
+**** low test coverage
+**** rationalization
+***** throw one away
+***** test bed for dramatis, etc.
+**** some egregiously bad stuff in there
 
-TDD
-  writing the tests first
+* TDD
+** writing the tests first
 
-Kinds of tests
-  Unit        
-  Integration
-    Approaches
-      Unintegrated
-        Selenium/Watir
-      Integrated
-        webrat/capybara
-    Most appropriate for testing webapps
+* Kinds of tests
+** Unit        
+** Integration
+*** Approaches
+**** Unintegrated
+***** Selenium/Watir
+**** Integrated
+***** webrat/capybara
+***** Most appropriate for testing webapps
 
-JavaScript
-  The language
-  The libraries/environments
+* JavaScript
+** The language
+** The libraries/environments
 
-JavaScript vs X for any X
-  Asynchronous
-  Event-driven
-    document.write vs ajax
+* JavaScript vs X
+** Dynamically typed
+*** not writing tests is grounds for involunatry commitment
+** Asynchronous
+** Event-driven
+*** document.write vs ajax
 
-Testing frameworks
-  qunit
-    Test-unit like
-      Very simple
-      Resig
-      jQuery
-    Async!
-      expect
-      stop
-      start
-  Jasmine
-    RSpec
-    Screw-Unit
-    BDD
-      unlimited nesting
-      "this"-per test
-  Others
-    Fairly fractured
-    Looked at many of them
-    Justice to none
-  Common-ish
-    Asynch    
-  JSLint
+* Testing frameworks
+**  qunit
+*** Test-unit like
+*** Very simple
+*** Resig
+**** jQuery, env-js
+*** Example
+*** Beyond the simple: async
+**** expect
+**** stop
+**** start
+** Jasmine
+*** RSpec
+*** Screw-Unit
+*** BDD
+**** unlimited nesting
+**** "this"-per test
+** Others
+**** Fairly fractured
 
-Developing JavaScript
-  Dom-related
-  Not DOM related
-  TDD
-    RGR
+Looked at many of them
+Justice to none
 
-Ready, Set, Go ...
-  Where, When, How, Why
-  Uh ...
-  Fixtures
-  Or ...
+**  Common-ish
+***    Asynch    
+** JSLint: in a class of its own
+** Runners
 
-Interpreters
-  JavaScript w/o the DOM is a very limited, speicaled library
+* Developing JavaScript
+** Dom-related
+** Not DOM related
+** TDD
+*** RGR
 
-JavaScript++
-  Browsers
-    Firebug/Developer tools
-  Browser environments
-    HTMLUnit (Rhino)
-    Env.js (Rhino and SpiderMonkey)
-  CommonJS environments
-    Node.js
-    I know next to nothing about this
+* Ready, Set, Go ...
+** Uh ...
+** Where, When, How, Why
+*** Fixtures
+*** Or ...
 
-Browser++
-  HTML5 +/-
-  DOM
-    document
-    window
-  XHR
-  Timers/event loop
-  I/O
-    console.*
+* Interpreters
+** JavaScript w/o the DOM is a very limited, speicaled library
 
-Runners
-  Load a page/hit refresh
-  Blueridge (RIP)
-  Jasmine ruby gem
+* JavaScript++
+**  Browsers
+***    Firebug/Developer tools
+**  Browser environments
+***    HTMLUnit (Rhino)
+***    Env.js (Rhino and SpiderMonkey)
+**  CommonJS environments
+***    Node.js
+***    I know next to nothing about this
 
-Fixtures
-  I hate fixtures
-  Generic
-  test-specific
-  in-vivo
-  static/dynamic
+* Browser++
+**  HTML5 +/-
+**  DOM
+***    document
+***    window
+**  XHR
+***  Timers/event loop
+**  I/O
+***    console.*
 
-RGR
-  Refresh
-  make/ant/rake
-  incremental/realtime
-    autotest
-    wake
-    dependences
+* Runners
+**  Load a page/hit refresh
+**  Blueridge (RIP)
+**  Jasmine ruby gem
 
-Me Me Me
-  TTT
-  ChessFlock
-  Dramatis
-  Screw-Unit => Jasmine
-  Bluerige => jazz/wake
-  Jasmine fork
-    incomplete/complete
-    eventually
-    wait_for
-  Jazz
-    Jasmine runner
-    automatic fixture (in-vivo and in-situ) detection and pairing
-    wake integration
+* Fixtures
+**  I hate fixtures
+**  Generic
+**  test-specific
+**  in-vivo
+**  static/dynamic
+
+*RGR
+**  Refresh
+**  make/ant/rake
+**  incremental/realtime
+***    autotest
+***    wake
+****    dependences
+
+* Me Me Me
+**  TTT
+**  ChessFlock
+**  Dramatis
+**  Screw-Unit => Jasmine
+**  Bluerige => jazz/wake
+**  Jasmine fork
+***    incomplete/complete
+***    eventually
+***    wait_for
+**  Jazz
+***    Jasmine runner
+***    automatic fixture (in-vivo and in-situ) detection and pairing
+***    wake integration
   wake
-    make/rake + autotest/watchr
-    graph dependeces/leveling
-    API    
-    plugins
-      haml/sass
-      jslint
-      jazz
-      cache_manifest
-      graphics
-        batik
-  jsrat
-    fill_in
-    click_link
+**    make/rake + autotest/watchr
+***    graph dependeces/leveling
+***    API    
+***    plugins
+****      haml/sass
+****      jslint
+****      jazz
+****      cache_manifest
+****      graphics
+***  jsrat
+****    fill_in
+****    click_link
 
 JSTestDriver
 
 TestSwarm
-
-JavaScript has a number of unit test frameworks as well, but they see far
-less use than those seen in other languages. What JavaScript doesn't
-have is an environment that makes it easy for a developer to write and
-run their tests without breaking their train of thought.
-
-In Java you run Eclipse or ant. In Ruby you run rake or autotest. In
-python you run python or nose.
 
 In JavaScript, you write your code, create an HTML fixture page to
 test that code, load that page in browser, click a few times, and look
