@@ -1,10 +1,10 @@
 * Test and Behavior Driven Development in JavaScript
-* 3 Intro/Context
+* 2 Intro/Context
 ** 1 JavaScript means different things to different people
 *** onclick
 *** node.js
 *** "HTML5" (me)
-** 2 ChessFlock
+** 1 ChessFlock
 *** demo
 *** run tests
 *** motivation
@@ -217,14 +217,22 @@
 ** 1 Collect/present results
 *** The way I want them
 *** CI, e.g., junit/testng output
-* 3 Fixtures
+* 1 Fixtures
 ** I hate fixtures
 ** Generic
 ** test-specific
 ** in-vitro, in-situ, in-vivo
 *** designer vs developer
 ** static/dynamic
-* 3 Me Me Me
+** qunit
+*** script tags for scripts, qunit, tests
+*** divs for qunit results
+*** stylesheet
+** jasmine
+*** script tags for scripts, jasmine, tests
+*** script tag for jasmine setup/exec
+*** stylesheet
+* 1 Me Me Me
 ** Write a little, test a little
 ** distributed HTML5 applications
 ** Dramatis
@@ -232,24 +240,38 @@
 *** ChessFlock
 ** Screw-Unit => Jasmine
 ** Bluerige => jazz/wake
-* 3 Jasmine fork
+* 2 Jasmine fork
 *** incomplete/complete
 *** eventually
 *** wait_for
+*** XML/Jazz reporter
 * 1 jsrat
 ** fill_in
 ** click_link
 * 5 jazz
-*** Jasmine runner
-*** automatic fixture (in-vivo and in-situ) detection and pairing
-*** wake integration
+** JS test driver
+*** Frameworks
+**** Jasmine, qunit (dated?), ?
+** "browser" driver
+*** envjsrb
+*** firefox/chrome
+*** linux/os x
+** Fixtures
+*** per test/spec
+*** generic, in-vitro, or in-situ
+** wake integration
+** demo
 * 5 wake
-*** make/rake + autotest/watchr
+** make/rake + autotest/watchr
 *** eventmachine
-*** runs in background terminal window
-*** graph dependeces/leveling
-*** plugins
-**** bundled
+** runs in background terminal window
+** dependeces
+*** leveleed DAG
+** records success/failure
+** scoped reexecution
+** plugin API
+*** dependences, success/failure
+*** bundled
 ***** ignore
 ***** directories
 ***** shell
@@ -257,10 +279,11 @@
 ***** cache_manifest
 ***** graphics: inkscape, batik, rsvg
 ***** future: closure, ???
-**** unbundled
+*** unbundled
 ***** jslint
 ***** jazz
-**** API 
-***** success
-***** dependence
-
+** demo
+* 1 Some missing pieces
+** web app integration tests
+*** selenium/watir/webrat/capyabara
+**** but see capaybara-envjs
