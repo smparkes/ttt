@@ -29,8 +29,6 @@
 *** Unit 
 **** Indivisible unit
 **** monolingual
-***** assertions
-***** mocks/stubs
 *** Integration
 **** Multiple units
 **** Monolingual or polylingual
@@ -65,7 +63,6 @@
 **** Timers/events/event loop
 **** XMLHTTPRequest
 **** Collectively "HTML5"
-**** Debugging
 **** Implementations
 ***** Browsers
 ***** Outside the browser
@@ -242,6 +239,8 @@
 ** Bluerige => jazz/wake
 * 2 Jasmine fork
 *** incomplete/complete
+**** balanced
+**** complete before incomplete
 *** eventually
 *** wait_for
 *** XML/Jazz reporter
@@ -287,3 +286,8 @@
 ** web app integration tests
 *** selenium/watir/webrat/capyabara
 **** but see capaybara-envjs
+
+
+
+***** assertions
+***** mocks/stubs
